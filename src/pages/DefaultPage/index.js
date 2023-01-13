@@ -3,11 +3,12 @@ import DefaultPageDescription from '../../components/DefaultPageDescription';
 import DefaultPageInputs from '../../components/DefaultPageInputs';
 import gradation from '../../assets/images/gradation_bg.jpg';
 import styled from 'styled-components';
+import { flexCustom } from '../../styles/theme';
 
 const DefaultPage = () => {
   return (
     <MainWrapper>
-      <MainBackground src={gradation} alt={'background'} />
+      <MainBackgroundImg src={gradation} alt="background" />
       <DefaultPageDescription />
       <DefaultPageInputs border />
     </MainWrapper>
@@ -17,18 +18,17 @@ const DefaultPage = () => {
 export default DefaultPage;
 
 const MainWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${flexCustom('column', 'center', 'flex-start')}
 
   height: 100vh;
   width: 100vw;
-  // max-width: 390px;
 
   @media (max-width: 400px) {
     width: 100%;
   }
 `;
 
-const MainBackground = styled.img`
+const MainBackgroundImg = styled.img`
+  max-width: 400px;
   opacity: 0.75;
 `;
