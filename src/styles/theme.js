@@ -1,4 +1,4 @@
-// import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 
 const theme = {
   white: '#ffffff',
@@ -12,5 +12,12 @@ const theme = {
   fontGrey: '#acadb5',
   fontNavy: '#45597a',
 };
+
+export const flexCustom = (flexDirection, alignItems, justifyContent) => css`
+  display: flex;
+  flex-direction: ${flexDirection || 'initial'};
+  align-items: ${alignItems || 'center'};
+  justify-content: ${justifyContent || 'center'};
+`;
 
 export default theme;

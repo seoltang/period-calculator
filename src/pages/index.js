@@ -2,11 +2,7 @@ import React from 'react';
 import DefaultPage from './DefaultPage';
 
 const Main = () => {
-  return (
-    <>
-      <DefaultPage />
-    </>
-  );
+  return <DefaultPage />;
 };
 
 export default Main;
