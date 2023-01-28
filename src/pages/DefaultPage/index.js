@@ -18,10 +18,13 @@ const DefaultPage = () => {
 export default DefaultPage;
 
 const MainWrapper = styled.div`
+  position: relative;
   ${flexCustom('column', 'center', 'flex-start')}
 
   height: 100vh;
   width: 100vw;
+  min-height: 820px;
+  // max-height: 380px;
 
   @media (max-width: 400px) {
     width: 100%;
