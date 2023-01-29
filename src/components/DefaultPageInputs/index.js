@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { RadioGroup, NumberField } from 'gestalt';
 import calendar from '../../assets/icons/calendar.svg';
 import check from '../../assets/icons/check-red.svg';
 import clock from '../../assets/icons/clock-orange.svg';
+import messages from './messages';
 import {
   AreaWrapper,
   AreaRow,
@@ -25,8 +27,14 @@ import {
 import './styles.scss';
 
 const calculationMethods = {
-  period: { label: '생리주기', value: 'period' },
-  record: { label: '최근기록', value: 'record' },
+  period: {
+    label: <FormattedMessage {...messages.calculationMethodPeriod} />,
+    value: 'period',
+  },
+  record: {
+    label: <FormattedMessage {...messages.calculationMethodRecord} />,
+    value: 'record',
+  },
 };
 
 const DefaultPageInputs = () => {
@@ -46,13 +54,17 @@ const DefaultPageInputs = () => {
                   <IconImage src={calendar} alt="calendar" />
                 </IconBox>
                 <TextBox>
-                  <P color="blue">최근 생리일</P>
+                  <P color="blue">
+                    <FormattedMessage {...messages.lastPeriodDate} />
+                  </P>
                 </TextBox>
                 <SelectBox>
                   <P>2023-10-23</P>
                 </SelectBox>
                 <ButtonBox>
-                  <CalendarButton>달력</CalendarButton>
+                  <CalendarButton>
+                    <FormattedMessage {...messages.calendar} />
+                  </CalendarButton>
                 </ButtonBox>
               </AreaRow>
             </AreaWhiteBox1>
@@ -64,7 +76,9 @@ const DefaultPageInputs = () => {
                   <IconImage src={check} alt="check-circle" />
                 </IconBox>
                 <TextBox>
-                  <P color="red">계산 방법</P>
+                  <P color="red">
+                    <FormattedMessage {...messages.calculationMethod} />
+                  </P>
                 </TextBox>
                 <RadioButtonBox className="calulation-method-radio">
                   <RadioGroup
@@ -110,7 +124,9 @@ const DefaultPageInputs = () => {
                   <IconImage src={clock} alt="period clock" />
                 </IconBox>
                 <TextBox>
-                  <P color="orange">생리 주기</P>
+                  <P color="orange">
+                    <FormattedMessage {...messages.periodCycle} />
+                  </P>
                 </TextBox>
                 <InputBox>
                   <NumberField
@@ -128,7 +144,9 @@ const DefaultPageInputs = () => {
                   />
                 </InputBox>
                 <SpanBox>
-                  <P className="text">일</P>
+                  <P className="text">
+                    <FormattedMessage {...messages.day} />
+                  </P>
                 </SpanBox>
               </AreaRow>
             </AreaWhiteBox1>
@@ -137,7 +155,9 @@ const DefaultPageInputs = () => {
           <AreaRow>
             <AreaBox1>
               <AreaContent>
-                <ConfirmButton>확인</ConfirmButton>
+                <ConfirmButton>
+                  <FormattedMessage {...messages.confirm} />
+                </ConfirmButton>
               </AreaContent>
             </AreaBox1>
           </AreaRow>
