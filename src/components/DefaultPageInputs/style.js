@@ -68,6 +68,8 @@ export const IconImage = styled.img`
 `;
 
 export const P = styled(_P)`
+  margin: 1em 0;
+
   ${(props) => {
     if (props.color === 'blue') {
       return css`
