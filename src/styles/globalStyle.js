@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import theme from './theme';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -13,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
 
     font-family: 'SF Pro Display', sans-serif;
+    line-height: 1.2rem;
     // color: #484848;
   }
 
@@ -26,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     cursor:pointer;
+  }
+
+  b {
+    font-weight: bold;
   }
 `;
 export default GlobalStyle;

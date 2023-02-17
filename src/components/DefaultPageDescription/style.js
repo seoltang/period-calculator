@@ -9,8 +9,6 @@ import {
 
 export const AreaWrapper = styled(_AreaWrapper)`
   position: absolute;
-
-  height: 40%;
 `;
 export const AreaRow = styled(_AreaRow)``;
 export const AreaBox1 = styled(_AreaBox1)``;
@@ -49,7 +47,7 @@ export const TitleH5 = styled.h5`
 
 export const P = styled.p`
   margin: 0;
-  padding: 0.2rem 0;
+  padding: 0.3rem 0;
 
   font-weight: 400;
   line-height: 1.6em;

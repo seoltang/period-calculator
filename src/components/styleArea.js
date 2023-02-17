@@ -82,6 +82,9 @@ export const AreaFlexBox = styled(AreaBox)`
 `;
 
 export const P = React.memo(styled.p`
+  font-size: 16px;
+  height: 18px;
+
   color: ${theme.fontNavy}
     ${(props) => {
       if (props.color === 'blue') {
@@ -98,7 +101,7 @@ export const Button = React.memo(styled.button`
 
   padding: 0;
   border: none;
-  border-radius: 16px;
+  border-radius: 20px;
 
   font-size: 16px;
 
@@ -122,8 +125,8 @@ const getCssStrPadding = (props) => {
     if (typeof props.padding === 'number') {
       cssStr += `padding: ${props.padding}px;`;
     }
-    if (!!props.paddingStyle === true) {
-      cssStr += `padding: ${props.paddingStyle};`;
+    if (typeof props.padding === 'string') {
+      cssStr += `padding: ${props.padding}`;
     } else if (props.padding === true) {
       cssStr += `padding: ${defaultCssStr};`;
     }
@@ -135,9 +138,11 @@ const getCssStrMargin = (props) => {
   let cssStr = '';
   const defaultCssStr = `${DEFAULT_MARGIN}px;`;
   if (props.margin) {
-    cssStr += `margin: ${props.margin};`;
-    if (!!props.marginStyle === true) {
-      cssStr += `margin: ${props.marginStyle};`;
+    if (typeof props.margin === 'number') {
+      cssStr += `margin: ${props.margin}px !important`;
+    }
+    if (typeof props.margin === 'string') {
+      cssStr += `margin: ${props.margin} !important`;
     } else if (props.margin === true) {
       cssStr += `margin: ${defaultCssStr};`;
     }

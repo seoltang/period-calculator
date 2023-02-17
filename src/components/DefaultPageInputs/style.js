@@ -1,8 +1,11 @@
 import styled, { css } from 'styled-components';
+
+import 'gestalt/dist/gestalt.css';
 import theme from '../../styles/theme';
 import {
   AreaWrapper as _AreaWrapper,
   AreaRow as _AreaRow,
+  AreaBox as _AreaBox,
   AreaBox1 as _AreaBox1,
   AreaBox2 as _AreaBox2,
   AreaContent as _AreaContent,
@@ -13,12 +16,15 @@ import {
 export const AreaWrapper = styled(_AreaWrapper)`
   position: absolute;
   z-index: 100;
-  transform: translate(0, 60%);
+  bottom: 15%;
 
-  height: 60%;
+  max-width: 400px;
+  width: 380px;
   padding: 0;
 
-  // background: ${theme.backgroundColor};
+  @media (min-height: 910px) {
+    bottom: 20%;
+  }
 `;
 export const AreaRow = styled(_AreaRow)`
   justify-content: flex-start;
@@ -43,23 +49,39 @@ export const AreaWhiteBox1 = styled(_AreaBox1)`
 
   background: #ffffff;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 16px;
+  border-radius: 20px;
 `;
 
-export const IconBox = styled(_AreaBox1)`
-  width: 10%;
+export const IconBox = styled(_AreaBox)`
+  width: 2%;
 `;
 
-export const QuestionBox = styled(_AreaBox1)`
+export const TextBox = styled(_AreaBox)`
   width: 30%;
 `;
 
-export const AnswerBox = styled(_AreaBox1)`
-  width: 40%;
+export const SelectBox = styled(_AreaBox)`
+  width: 30%;
 `;
 
-export const ButtonBox = styled(_AreaBox1)`
+export const ButtonBox = styled(_AreaBox)`
   width: 20%;
+`;
+
+export const RadioButtonBox = styled(_AreaBox)`
+  width: 70%;
+`;
+
+export const InputBox = styled(_AreaBox)`
+  width: 65%;
+`;
+
+export const SpanBox = styled(_AreaBox)`
+  width: 6%;
+  :not(:nth-child(1)) {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 `;
 
 export const IconImage = styled.img`
@@ -68,15 +90,13 @@ export const IconImage = styled.img`
 `;
 
 export const P = styled(_P)`
+  margin: 1em 0;
+
   ${(props) => {
-    if (props.color === 'blue') {
+    if (props.color) {
+      const themeColor = theme[props.color];
       return css`
-        color: ${theme.blue};
-      `;
-    }
-    if (props.color === 'red') {
-      return css`
-        color: ${theme.red};
+        color: ${themeColor};
       `;
     }
   }};
