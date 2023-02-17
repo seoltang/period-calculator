@@ -1,0 +1,11 @@
+{
+  "general.hello": "안녕하세요?",
+  "general.confirm": "확인",
+  "periodMain.lastPeriodDate": "최근 생리일",
+  "periodMain.calendar": "달력",
+  "periodMain.calculationMethod": "계산 방법",
+  "periodMain.calculationMethodPeriod": "생리주기",
+  "periodMain.calculationMethodRecord": "최근기록",
+  "periodMain.periodCycle": "생리 주기",
+  "periodMain.day": "일"
+}
