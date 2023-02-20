@@ -107,6 +107,10 @@ export const Button = React.memo(styled.button`
 
   background: linear-gradient(#69d4fb, #1ebefa);
   color: ${theme.white};
+
+  &:hover {
+    cursor: pointer;
+  }
 `);
 
 const getAreaCssStr = (props) => {
