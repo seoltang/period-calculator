@@ -1,6 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { RadioGroup, NumberField } from 'gestalt';
+import { Calendar } from 'react-date-range';
+import moment from 'moment';
+import { RadioGroup, NumberField, Modal, Button } from 'gestalt';
 import calendar from '../../assets/icons/calendar.svg';
 import check from '../../assets/icons/check-red.svg';
 import clock from '../../assets/icons/clock-orange.svg';
@@ -15,6 +18,7 @@ import {
   TextBox,
   SelectBox,
   ButtonBox,
+  AreaBoxAbsolute,
   RadioButtonBox,
   InputBox,
   SpanBox,
@@ -42,6 +46,9 @@ const DefaultPageInputs = () => {
     calculationMethods.period.value
   );
   const [periodValue, setPeriodValue] = useState(28);
+  const [isCalendarShown, setIsCalendarShown] = useState(false);
+  const today = moment().format('YYYY-MM-DD'); // 년도-월-일
+  const [date, setDate] = useState(today);
 
   return (
     <AreaWrapper minWidth>
@@ -62,12 +69,45 @@ const DefaultPageInputs = () => {
                   <P>2023-10-23</P>
                 </SelectBox>
                 <ButtonBox>
-                  <CalendarButton>
+                  <CalendarButton
+                    onClick={() => {
+                      setIsCalendarShown(!isCalendarShown);
+                    }}
+                  >
                     <FormattedMessage {...messages.calendar} />
                   </CalendarButton>
                 </ButtonBox>
               </AreaRow>
             </AreaWhiteBox1>
+          </AreaRow>
+          <AreaRow>
+            <AreaBoxAbsolute>
+              {isCalendarShown && (
+                <Modal
+                  align="start"
+                  closeOnOutsideClick={true}
+                  heading="Heading"
+                  onDismiss={() => {
+                    setIsCalendarShown(!isCalendarShown);
+                  }}
+                  footer={
+                    <AreaRow>
+                      <AreaBox1>
+                        <ConfirmButton
+                          onClick={() => {
+                            setIsCalendarShown(!isCalendarShown);
+                          }}
+                        >
+                          <FormattedMessage {...messages.confirm} />
+                        </ConfirmButton>
+                      </AreaBox1>
+                    </AreaRow>
+                  }
+                >
+                  <div>modal</div>
+                </Modal>
+              )}
+            </AreaBoxAbsolute>
           </AreaRow>
           <AreaRow>
             <AreaWhiteBox1 padding="10px 20px" className="area-white-box">

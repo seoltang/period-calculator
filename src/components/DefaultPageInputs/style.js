@@ -114,3 +114,7 @@ export const RadioButton = styled.input`
 
   border: 2px solid #fff;
 `;
+
+export const AreaBoxAbsolute = styled(_AreaBox1)`
+  z-index: 1000;
+`;
