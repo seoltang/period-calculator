@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import DefaultPage from './DefaultPage';
 import ResultPage from './ResultPage';
 import { PATH } from '../routes/config';
-import gradation from '../assets/images/gradation_bg.jpg';
 import { MainWrapper, MainBackgroundImg } from './style';
 
 const Main = () => {
@@ -11,7 +10,7 @@ const Main = () => {
 
   return (
     <MainWrapper>
-      <MainBackgroundImg src={gradation} alt="background" />
+      <MainBackgroundImg />
       {
         {
           [PATH.default]: <DefaultPage />,
