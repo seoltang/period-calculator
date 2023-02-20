@@ -3,28 +3,35 @@ import reset from 'styled-reset';
 import theme from './theme';
 
 const GlobalStyle = createGlobalStyle`
-  // ${reset}
+  ${reset}
   
-  // * {
-  //   box-sizing: border-box;
-  // }
+  * {
+    box-sizing: border-box;
+  }
 
-  // body {
-  //   padding: 0;
-  //   margin: 0;
+  body {
+    padding: 0;
+    margin: 0;
 
-  //   font-family: 'SF Pro Display', sans-serif;
-  //   // color: #484848;
-  // }
+    font-family: 'SF Pro Display', sans-serif;
+    line-height: 1.2rem;
+    // color: #484848;
+  }
 
-  // button {
-  //   cursor: pointer;
-  // }
+  button {
+    cursor: pointer;
+  }
 
-  // p, span.text {
-  //   font-size: 16px;
-  //   line-height: 16px;
-  //   color: ${theme.fontNavy};
-  // }
+  body {
+    font-family: 'SF Pro Display', sans-serif
+  }
+
+  button {
+    cursor:pointer;
+  }
+
+  b {
+    font-weight: bold;
+  }
 `;
 export default GlobalStyle;

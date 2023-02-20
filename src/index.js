@@ -5,7 +5,7 @@ import enUsMsg from './translations/en.json';
 import koMsg from './translations/ko.json';
 import { ThemeProvider } from 'styled-components';
 import Router from './routes';
-// import GlobalStyle from './styles/globalStyle';
+import GlobalStyle from './styles/globalStyle';
 import theme from './styles/theme';
 
 const DEFALUT_LANGUAGE = 'en-US';
@@ -22,7 +22,7 @@ const messages = { 'en-US': enUsMsg, ko: koMsg }[locale];
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    {/* <GlobalStyle /> */}
+    <GlobalStyle />
     <IntlProvider locale={locale} key={locale} messages={messages}>
       <ThemeProvider theme={theme}>
         <Router />
