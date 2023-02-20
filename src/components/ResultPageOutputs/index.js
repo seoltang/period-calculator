@@ -14,17 +14,17 @@ import {
 
 const outputs = [
   {
-    id: messages.nextPeriodDate,
+    id: messages.nextPeriodDate.id,
     title: '다음 생리 예정일',
     content: '11월 1일',
   },
   {
-    id: messages.daysFromToday,
+    id: messages.daysFromToday.id,
     title: '오늘로부터',
     content: '15일 뒤',
   },
   {
-    id: messages.periodCycle,
+    id: messages.periodCycle.id,
     title: '생리 주기',
     content: '30일',
   },
