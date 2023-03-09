@@ -1,24 +1,37 @@
 import styled from 'styled-components';
 import { flexCustom } from '../styles/theme';
-import gradation from '../assets/images/gradation.jpg';
+import hourGlass from '../assets/images/hourglass-transparent.png';
 
 export const MainWrapper = styled.div`
   position: relative;
   ${flexCustom('column', 'center', 'flex-start')}
 
   height: 100vh;
-  width: 100vw;
   min-height: 820px;
-
-  @media (max-width: 400px) {
-    width: 100%;
-  }
+  background-color: #fde0dc;
+  z-index: -100;
 `;
 
-export const MainBackgroundImg = styled.div`
-  background-color: #f8f3f4;
-  background-image: url(${gradation});
-  width: 380px;
-  height: 820px;
-  opacity: 0.75;
+export const HourGlass = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(calc(-50% - 300px));
+  width: 500px;
+  height: 500px;
+  background-image: url(${hourGlass});
+  z-index: -99;
+`;
+
+export const MainBackground = styled.div`
+  width: 400px;
+  height: 100%;
+  background: linear-gradient(217deg, lavenderBlush, white 70.71%),
+    linear-gradient(127deg, azure, white 70.71%),
+    linear-gradient(336deg, aliceBlue, white 70.71%);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  @media (max-width: 540px) {
+    width: 100%;
+  }
 `;
