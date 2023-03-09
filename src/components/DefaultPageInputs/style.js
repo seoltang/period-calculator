@@ -26,10 +26,12 @@ export const AreaWrapper = styled(_AreaWrapper)`
     bottom: 20%;
   }
 `;
+
 export const AreaRow = styled(_AreaRow)`
   justify-content: flex-start;
   align-items: center;
 `;
+
 export const AreaBox1 = styled(_AreaBox1)``;
 export const AreaBox2 = styled(_AreaBox2)``;
 export const AreaContent = styled(_AreaContent)``;
@@ -45,11 +47,49 @@ export const AreaInputRow = styled(_AreaRow)`
 `;
 
 export const AreaWhiteBox1 = styled(_AreaBox1)`
-  // height: 30px;
-
   background: #ffffff;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
+
+  img {
+    vertical-align: middle;
+  }
+
+  .calulation-method-radio {
+    div.xpn {
+      width: 20px;
+      height: 20px;
+
+      border-color: #767676;
+      border-color: #45597a;
+
+      // .nG5 {
+      //   // default
+      // }
+      // .dPY {
+      //   // hover
+      // }
+      // .gsJ {
+      //   // active
+      // }
+    }
+
+    label {
+      div.Shl {
+        margin: 0 !important;
+        padding-left: 0px;
+        padding-right: 2px;
+      }
+    }
+
+    .O2T {
+      color: #45597a;
+    }
+  }
+
+  input#refNumberField {
+    height: 36px;
+  }
 `;
 
 export const IconBox = styled(_AreaBox)`

@@ -28,7 +28,6 @@ import {
   CalendarButton,
   ConfirmButton,
 } from './style';
-import './styles.scss';
 
 const calculationMethods = {
   period: {
@@ -55,7 +54,7 @@ const DefaultPageInputs = () => {
       <AreaInputRow>
         <AreaBox1 padding>
           <AreaRow>
-            <AreaWhiteBox1 padding="10px 20px" className="area-white-box">
+            <AreaWhiteBox1 padding="10px 20px">
               <AreaRow>
                 <IconBox>
                   <IconImage src={calendar} alt="calendar" />
@@ -110,7 +109,7 @@ const DefaultPageInputs = () => {
             </AreaBoxAbsolute>
           </AreaRow>
           <AreaRow>
-            <AreaWhiteBox1 padding="10px 20px" className="area-white-box">
+            <AreaWhiteBox1 padding="10px 20px">
               <AreaRow>
                 <IconBox>
                   <IconImage src={check} alt="check-circle" />
@@ -158,7 +157,7 @@ const DefaultPageInputs = () => {
             </AreaWhiteBox1>
           </AreaRow>
           <AreaRow>
-            <AreaWhiteBox1 padding="10px 20px" className="area-white-box">
+            <AreaWhiteBox1 padding="10px 20px">
               <AreaRow>
                 <IconBox>
                   <IconImage src={clock} alt="period clock" />

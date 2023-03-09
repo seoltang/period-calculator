@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { flexCustom } from '../styles/theme';
-import '../assets/images/gradation_bg.jpg';
+import gradation from '../assets/images/gradation.jpg';
 
 export const MainWrapper = styled.div`
   position: relative;
@@ -17,7 +17,7 @@ export const MainWrapper = styled.div`
 
 export const MainBackgroundImg = styled.div`
   background-color: #f8f3f4;
-  background-image: url('../assets/images/gradation_bg.jpg');
+  background-image: url(${gradation});
   width: 380px;
   height: 820px;
   opacity: 0.75;
