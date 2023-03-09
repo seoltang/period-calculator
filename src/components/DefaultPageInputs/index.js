@@ -24,7 +24,6 @@ import {
   CalendarButton,
   ConfirmButton,
 } from './style';
-import './styles.scss';
 
 const calculationMethods = {
   period: {
@@ -48,7 +47,7 @@ const DefaultPageInputs = () => {
       <AreaInputRow>
         <AreaBox1 padding>
           <AreaRow>
-            <AreaWhiteBox1 padding="10px 20px" className="area-white-box">
+            <AreaWhiteBox1 padding="10px 20px">
               <AreaRow>
                 <IconBox>
                   <IconImage src={calendar} alt="calendar" />
@@ -70,7 +69,36 @@ const DefaultPageInputs = () => {
             </AreaWhiteBox1>
           </AreaRow>
           <AreaRow>
-            <AreaWhiteBox1 padding="10px 20px" className="area-white-box">
+            <AreaBoxAbsolute>
+              {isCalendarShown && (
+                <Modal
+                  align="start"
+                  closeOnOutsideClick={true}
+                  heading="Heading"
+                  onDismiss={() => {
+                    setIsCalendarShown(!isCalendarShown);
+                  }}
+                  footer={
+                    <AreaRow>
+                      <AreaBox1>
+                        <ConfirmButton
+                          onClick={() => {
+                            setIsCalendarShown(!isCalendarShown);
+                          }}
+                        >
+                          <FormattedMessage {...messages.confirm} />
+                        </ConfirmButton>
+                      </AreaBox1>
+                    </AreaRow>
+                  }
+                >
+                  <div>modal</div>
+                </Modal>
+              )}
+            </AreaBoxAbsolute>
+          </AreaRow>
+          <AreaRow>
+            <AreaWhiteBox1 padding="10px 20px">
               <AreaRow>
                 <IconBox>
                   <IconImage src={check} alt="check-circle" />
@@ -118,7 +146,7 @@ const DefaultPageInputs = () => {
             </AreaWhiteBox1>
           </AreaRow>
           <AreaRow>
-            <AreaWhiteBox1 padding="10px 20px" className="area-white-box">
+            <AreaWhiteBox1 padding="10px 20px">
               <AreaRow>
                 <IconBox>
                   <IconImage src={clock} alt="period clock" />
