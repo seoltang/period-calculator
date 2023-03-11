@@ -2,6 +2,6 @@
 
 ## 실행 방법
 
-1. 노드 버전 16.18.0 확인 `nvm use 16.18.0`
+1. `nvm use`
 2. `npm install`
 3. `npm start`
