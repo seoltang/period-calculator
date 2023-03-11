@@ -20,6 +20,74 @@ const DEFAULT_MARGIN = 20;
 const DEFAULT_PADDING = 20;
 const DEFAULT_MINWIDTH = 350;
 
+const getCssStrPadding = (props) => {
+  let cssStr = '';
+  const defaultCssStr = `${DEFAULT_PADDING}px;`;
+  if (props.padding) {
+    if (typeof props.padding === 'number') {
+      cssStr += `padding: ${props.padding}px;`;
+    }
+    if (typeof props.padding === 'string') {
+      cssStr += `padding: ${props.padding}`;
+    } else if (props.padding === true) {
+      cssStr += `padding: ${defaultCssStr};`;
+    }
+  }
+  return cssStr;
+};
+
+const getCssStrMargin = (props) => {
+  let cssStr = '';
+  const defaultCssStr = `${DEFAULT_MARGIN}px;`;
+  if (props.margin) {
+    if (typeof props.margin === 'number') {
+      cssStr += `margin: ${props.margin}px !important`;
+    }
+    if (typeof props.margin === 'string') {
+      cssStr += `margin: ${props.margin} !important`;
+    } else if (props.margin === true) {
+      cssStr += `margin: ${defaultCssStr};`;
+    }
+  }
+  return cssStr;
+};
+
+const getCssStrBorder = (props) => {
+  let cssStr = '';
+  const defaultCssStr = '1px solid #ebedf0;';
+  if (props.border) {
+    if (props.border === 'bottom') {
+      cssStr += `border-bottom: ${defaultCssStr};`;
+    } else if (props.border === true) {
+      cssStr += `border: ${defaultCssStr};`;
+    }
+  }
+  return cssStr;
+};
+
+const getCssStrMinWidth = (props) => {
+  let cssStr = '';
+  const defaultCssStr = `${DEFAULT_MINWIDTH}px;`;
+  if (props.minWidth) {
+    if (typeof props.minWidth === 'number') {
+      const calculatedMinWidth = DEFAULT_MINWIDTH / props.minWidth;
+      cssStr += `min-width: ${calculatedMinWidth}px`;
+    } else if (props.minWidth === true) {
+      cssStr += `min-width: ${defaultCssStr};`;
+    }
+  }
+  return cssStr;
+};
+
+const getAreaCssStr = (props) => {
+  let cssStr = '';
+  cssStr += getCssStrBorder(props);
+  cssStr += getCssStrMargin(props);
+  cssStr += getCssStrPadding(props);
+  cssStr += getCssStrMinWidth(props);
+  return cssStr;
+};
+
 // AreaWrapper는 컴포넌트안에서 가장 상단의 태그로 한번만 사용됩니다.
 export const AreaWrapper = React.memo(styled.div`
   padding: ${DEFAULT_PADDING}px;
@@ -85,14 +153,15 @@ export const P = React.memo(styled.p`
   font-size: 16px;
   height: 18px;
 
-  color: ${theme.fontNavy}
-    ${(props) => {
-      if (props.color === 'blue') {
-        return css`
-          color: ${theme.blue};
-        `;
-      }
-    }};
+  color: ${(props) => {
+    if (props.color === 'blue') {
+      return css`
+        color: ${theme.blue};
+      `;
+    }
+
+    return theme.fontNavy;
+  }};
 `);
 
 export const Button = React.memo(styled.button`
@@ -112,71 +181,3 @@ export const Button = React.memo(styled.button`
     cursor: pointer;
   }
 `);
-
-const getAreaCssStr = (props) => {
-  let cssStr = '';
-  cssStr += getCssStrBorder(props);
-  cssStr += getCssStrMargin(props);
-  cssStr += getCssStrPadding(props);
-  cssStr += getCssStrMinWidth(props);
-  return cssStr;
-};
-
-const getCssStrPadding = (props) => {
-  let cssStr = '';
-  let defaultCssStr = `${DEFAULT_PADDING}px;`;
-  if (props.padding) {
-    if (typeof props.padding === 'number') {
-      cssStr += `padding: ${props.padding}px;`;
-    }
-    if (typeof props.padding === 'string') {
-      cssStr += `padding: ${props.padding}`;
-    } else if (props.padding === true) {
-      cssStr += `padding: ${defaultCssStr};`;
-    }
-  }
-  return cssStr;
-};
-
-const getCssStrMargin = (props) => {
-  let cssStr = '';
-  const defaultCssStr = `${DEFAULT_MARGIN}px;`;
-  if (props.margin) {
-    if (typeof props.margin === 'number') {
-      cssStr += `margin: ${props.margin}px !important`;
-    }
-    if (typeof props.margin === 'string') {
-      cssStr += `margin: ${props.margin} !important`;
-    } else if (props.margin === true) {
-      cssStr += `margin: ${defaultCssStr};`;
-    }
-  }
-  return cssStr;
-};
-
-const getCssStrBorder = (props) => {
-  let cssStr = '';
-  let defaultCssStr = '1px solid #ebedf0;';
-  if (props.border) {
-    if (props.border === 'bottom') {
-      cssStr += `border-bottom: ${defaultCssStr};`;
-    } else if (props.border === true) {
-      cssStr += `border: ${defaultCssStr};`;
-    }
-  }
-  return cssStr;
-};
-
-const getCssStrMinWidth = (props) => {
-  let cssStr = '';
-  let defaultCssStr = `${DEFAULT_MINWIDTH}px;`;
-  if (props.minWidth) {
-    if (typeof props.minWidth === 'number') {
-      const calculatedMinWidth = DEFAULT_MINWIDTH / props.minWidth;
-      cssStr += `min-width: ${calculatedMinWidth}px`;
-    } else if (props.minWidth === true) {
-      cssStr += `min-width: ${defaultCssStr};`;
-    }
-  }
-  return cssStr;
-};
