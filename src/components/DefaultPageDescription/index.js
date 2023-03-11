@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  AreaWrapper,
-  AreaRow,
-  AreaBox1,
-  AreaCenterContent,
-  TitleH1,
-  P,
-} from './style';
+import { AreaWrapper, AreaRow, AreaBox1, AreaCenterContent, TitleH1, P } from './style';
 
 function DefaultPageDescription() {
   return (

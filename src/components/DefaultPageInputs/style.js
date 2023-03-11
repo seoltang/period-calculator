@@ -139,6 +139,8 @@ export const P = styled(_P)`
         color: ${themeColor};
       `;
     }
+
+    return '';
   }};
 `;
 

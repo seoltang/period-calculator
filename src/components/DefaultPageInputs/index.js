@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Calendar } from 'react-date-range';
-import moment from 'moment';
-import { RadioGroup, NumberField, Modal, Button } from 'gestalt';
+// import { Calendar } from 'react-date-range';
+// import moment from 'moment';
+import { RadioGroup, NumberField, Modal } from 'gestalt';
 import calendar from '../../assets/icons/calendar.svg';
 import check from '../../assets/icons/check-red.svg';
 import clock from '../../assets/icons/clock-orange.svg';
@@ -43,8 +44,8 @@ function DefaultPageInputs() {
   const [calulationMethod, setCalulationMethod] = useState(calculationMethods.period.value);
   const [periodValue, setPeriodValue] = useState(28);
   const [isCalendarShown, setIsCalendarShown] = useState(false);
-  const today = moment().format('YYYY-MM-DD'); // 년도-월-일
-  const [date, setDate] = useState(today);
+  // const today = moment().format('YYYY-MM-DD'); // 년도-월-일
+  // const [date, setDate] = useState(today);
 
   return (
     <AreaWrapper minWidth>
