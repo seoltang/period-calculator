@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Calendar } from 'react-date-range';
@@ -40,10 +39,8 @@ const calculationMethods = {
   },
 };
 
-const DefaultPageInputs = () => {
-  const [calulationMethod, setCalulationMethod] = useState(
-    calculationMethods.period.value
-  );
+function DefaultPageInputs() {
+  const [calulationMethod, setCalulationMethod] = useState(calculationMethods.period.value);
   const [periodValue, setPeriodValue] = useState(28);
   const [isCalendarShown, setIsCalendarShown] = useState(false);
   const today = moment().format('YYYY-MM-DD'); // 년도-월-일
@@ -84,7 +81,7 @@ const DefaultPageInputs = () => {
               {isCalendarShown && (
                 <Modal
                   align="start"
-                  closeOnOutsideClick={true}
+                  closeOnOutsideClick
                   heading="Heading"
                   onDismiss={() => {
                     setIsCalendarShown(!isCalendarShown);
@@ -128,27 +125,19 @@ const DefaultPageInputs = () => {
                     // errorMessage="Please select one"
                   >
                     <RadioGroup.RadioButton
-                      checked={
-                        calulationMethod === calculationMethods.period.value
-                      }
+                      checked={calulationMethod === calculationMethods.period.value}
                       id="periodMethod"
                       label={calculationMethods.period.label}
                       name="calulationMethod"
-                      onChange={() =>
-                        setCalulationMethod(calculationMethods.period.value)
-                      }
+                      onChange={() => setCalulationMethod(calculationMethods.period.value)}
                       value={calculationMethods.period.value}
                     />
                     <RadioGroup.RadioButton
-                      checked={
-                        calulationMethod === calculationMethods.record.value
-                      }
+                      checked={calulationMethod === calculationMethods.record.value}
                       id="recordMethod"
                       label={calculationMethods.record.label}
                       name="calulationMethod"
-                      onChange={() =>
-                        setCalulationMethod(calculationMethods.record.value)
-                      }
+                      onChange={() => setCalulationMethod(calculationMethods.record.value)}
                       value={calculationMethods.record.value}
                     />
                   </RadioGroup>
@@ -204,6 +193,6 @@ const DefaultPageInputs = () => {
       </AreaInputRow>
     </AreaWrapper>
   );
-};
+}
 
 export default DefaultPageInputs;

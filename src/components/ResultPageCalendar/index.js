@@ -3,10 +3,10 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { DateRange } from 'react-date-range';
 import { ko } from 'date-fns/locale';
-import { AreaWrapper, AreaRow, AreaBox1, AreaCenterContent } from './style';
 import styled from 'styled-components';
+import { AreaWrapper, AreaRow, AreaBox1, AreaCenterContent } from './style';
 
-const ResultPageCalendar = () => {
+function ResultPageCalendar() {
   const period = {
     startDate: new Date(2023, 9, 28),
     endDate: new Date(2023, 10, 5),
@@ -29,7 +29,7 @@ const ResultPageCalendar = () => {
               showDateDisplay={false}
               showPreview={false}
               dragSelectionEnabled={false}
-              preventSnapRefocus={true}
+              preventSnapRefocus
               onChange={() => {}}
               locale={ko}
             />
@@ -38,7 +38,7 @@ const ResultPageCalendar = () => {
       </AreaRow>
     </AreaWrapper>
   );
-};
+}
 
 const StyledDateRange = styled(DateRange)`
   button.rdrDay {

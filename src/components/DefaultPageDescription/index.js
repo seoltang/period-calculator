@@ -8,7 +8,7 @@ import {
   P,
 } from './style';
 
-const DefaultPageDescription = () => {
+function DefaultPageDescription() {
   return (
     <AreaWrapper minWidth>
       <AreaRow>
@@ -35,6 +35,6 @@ const DefaultPageDescription = () => {
       </AreaRow>
     </AreaWrapper>
   );
-};
+}
 
 export default DefaultPageDescription;

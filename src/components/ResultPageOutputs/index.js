@@ -30,7 +30,7 @@ const outputs = [
   },
 ];
 
-const ResultPageOutputs = () => {
+function ResultPageOutputs() {
   return (
     <AreaWrapper minWidth>
       <AreaRow>
@@ -54,6 +54,6 @@ const ResultPageOutputs = () => {
       </AreaRow>
     </AreaWrapper>
   );
-};
+}
 
 export default ResultPageOutputs;
