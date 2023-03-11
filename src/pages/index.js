@@ -10,7 +10,7 @@ import {
   BackgroundGradient,
 } from './style';
 
-const Main = () => {
+function Main() {
   const { pathname } = useLocation();
 
   return (
@@ -27,6 +27,6 @@ const Main = () => {
       }
     </MainWrapper>
   );
-};
+}
 
 export default Main;
