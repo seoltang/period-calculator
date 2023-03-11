@@ -26,12 +26,18 @@ export const HourGlass = styled.div`
 export const MainBackground = styled.div`
   width: 400px;
   height: 100%;
-  background: linear-gradient(217deg, lavenderBlush, white 70.71%),
-    linear-gradient(127deg, azure, white 70.71%),
-    linear-gradient(336deg, aliceBlue, white 70.71%);
+  background-color: white;
   box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 
   @media (max-width: 540px) {
     width: 100%;
   }
+`;
+
+export const BackgroundGradient = styled.div`
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(217deg, lavenderBlush, rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, mintCream, rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, aliceBlue, rgba(0, 0, 255, 0) 70.71%);
 `;
